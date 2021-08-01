@@ -15,7 +15,8 @@ int *buildNext(char *P)
         {
             ++j;
             ++t;
-            next[j] = t;
+            //            next[j] = t;
+            next[j] = (P[j] != P[t] ? t : next[t]);
         }
         else
         {
