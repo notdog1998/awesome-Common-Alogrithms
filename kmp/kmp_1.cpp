@@ -13,7 +13,9 @@ int *buildNext(char *P)
     {
         if (t < 0 || P[j] == P[t])
         {
-            next[j++] = t++;
+            ++j;
+            ++t;
+            next[j] = t;
         }
         else
         {
