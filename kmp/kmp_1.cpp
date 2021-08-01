@@ -43,13 +43,13 @@ int kmp_match(char *P, char *T)
         }
     }
     delete[] next;
-    return i - j;
+    return j == m ? (i - j) : -1;
 }
 
 int main()
 {
-    char a[128] = "ababcabcacbab";
-    char b[128] = "abcac";
+    char b[128] = "ababcabcacbab";
+    char a[128] = "tr";
     cout << kmp_match(a, b) << endl;
     return 0;
 }
