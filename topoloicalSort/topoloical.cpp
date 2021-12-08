@@ -103,6 +103,7 @@ int main()
     if(valid)
     {
         reverse(resDfs.begin(), resDfs.end());
+        cout << "无环" << endl;
     }
     else
     {
