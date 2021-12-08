@@ -1,0 +1,26 @@
+
+
+{
+    "files.defaultLanguage": "c", 
+    "editor.formatOnType": true,  
+    "editor.suggest.snippetsPreventQuickSuggestions": false, 
+    "editor.acceptSuggestionOnEnter": "off", 
+    
+
+    "code-runner.runInTerminal": true, 
+    "code-runner.executorMap": {
+        "c": "gcc '$fileName' -o '$fileNameWithoutExt.exe' -Wall -O2 -m64 -lm -static-libgcc -fexec-charset=GBK -D__USE_MINGW_ANSI_STDIO && &'./$fileNameWithoutExt.exe'",
+        "cpp": "g++ '$fileName' -o '$fileNameWithoutExt.exe' -Wall -O2 -m64 -static-libgcc -fexec-charset=GBK && &'./$fileNameWithoutExt.exe'"
+    },
+    "code-runner.saveFileBeforeRun": true, 
+    "code-runner.preserveFocus": true,     
+    "code-runner.clearPreviousOutput": false, 
+    "code-runner.ignoreSelection": true,   
+    "code-runner.fileDirectoryAsCwd": true, 
+
+    "C_Cpp.clang_format_sortIncludes": true,
+    "files.associations": {
+        "algorithm": "cpp"
+    },
+    
+}
