@@ -7,7 +7,7 @@ using namespace std;
 
 mutex mtx;
 condition_variable cv;
-condition_variable fullCv;
+condition_variable notFullCv;
 condition_variable notEmptyCv;
 const int maxDequeSize = 30;
 // 共享资源（工厂）
@@ -27,7 +27,7 @@ void produce() {
         // }
 
         // items->size < maxDequeSize 继续执行； 否则（items->size >= maxDequeSize），被wait住
-        fullCv.wait(lock, []()
+        notFullCv.wait(lock, []()
                     { return items->size < maxDequeSize; });
         // 生产
         items->dq.push_back(111);
@@ -52,7 +52,7 @@ void consume() {
         items->dq.pop_front();
         items->size--;
         // 通知生产者线程生产
-        fullCv.notify_all();
+        notFullCv.notify_all();
     }
 }
 int main() {
